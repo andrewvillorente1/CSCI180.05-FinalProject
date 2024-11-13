@@ -1,0 +1,11 @@
+package app.repositories;
+
+import app.entities.Meal;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface MealRepository extends JpaRepository<Meal, Long> {
+    List<Meal> findByMealType(String mealType);
+    List<Meal> findByContainsGluten(Boolean containsGluten);
+    List<Meal> findByMealNameContaining(String keyword);
+}

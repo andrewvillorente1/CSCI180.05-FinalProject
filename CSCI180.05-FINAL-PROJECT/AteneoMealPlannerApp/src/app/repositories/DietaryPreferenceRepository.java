@@ -1,5 +1,8 @@
 package app.repositories;
+import app.entities.DietaryPreference;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
-public interface DietaryPreferenceRepository {
-
+public interface DietaryPreferenceRepository extends JpaRepository<DietaryPreference, Long> {
+    Optional<DietaryPreference> findByDietaryName(String dietaryName);
 }
